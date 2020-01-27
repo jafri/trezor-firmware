@@ -103,8 +103,6 @@ async def check_tx_fee(tx: SignTx, keychain: seed.Keychain):
         wallet_path = input_extract_wallet_path(txi, wallet_path)
         writers.write_tx_input_check(h_first, txi)
         weight.add_input(txi)
-        hash143.add_prevouts(txi)  # all inputs are included (non-segwit as well)
-        hash143.add_sequence(txi)
 
         if not addresses.validate_full_path(txi.address_n, coin, txi.script_type):
             await helpers.confirm_foreign_address(txi.address_n)
