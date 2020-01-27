@@ -46,7 +46,7 @@ EMU_TEST_ARGS = --disable-animation --headless --output=$(EMU_LOG_FILE) --tempor
 EMU_TEST = $(EMU) $(EMU_TEST_ARGS) -c
 
 JUNIT_XML ?= $(TESTPATH)/junit.xml
-PYTEST = pytest --junitxml=$(JUNIT_XML)
+PYTEST = pytest -rfE --junitxml=$(JUNIT_XML)
 TREZOR_FIDO2_UDP_PORT = 21326
 
 ## help commands:
